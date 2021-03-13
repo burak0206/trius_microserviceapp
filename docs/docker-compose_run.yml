@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 020688
+      MYSQL_DATABASE: ticketdb
+      MYSQL_PASSWORD: 020688
+      MYSQL_USER: root
+    ports:
+      - '3306:3306'
+    volumes:
+      - /Users/burakdagli/Desktop/dockerdata/mysql/tmp_docker:/var/lib/mysql

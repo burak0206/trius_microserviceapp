@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  cassandra:
+    image: cassandra
+    ports:
+      - '9042:9042'
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 020688
+      MYSQL_DATABASE: ticketdb
+      MYSQL_PASSWORD: 020688
+      MYSQL_USER: root
+    ports:
+      - '3306:3306'
+    volumes:
+      - /Users/burakdagli/Desktop/dockerdata/mysql/tmp_docker:/var/lib/mysql
+
+  elasticsearch:
+    image: elasticsearch:7.11.1
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      discovery.type: single-node
