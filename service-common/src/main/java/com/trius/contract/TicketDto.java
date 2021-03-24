@@ -1,4 +1,4 @@
-package com.trius.dto;
+package com.trius.contract;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,6 @@
 package com.trius.api;
 
-import com.trius.dto.TicketDto;
+import com.trius.contract.TicketDto;
 import com.trius.service.TicketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

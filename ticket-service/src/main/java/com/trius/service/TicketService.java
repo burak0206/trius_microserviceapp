@@ -1,6 +1,6 @@
 package com.trius.service;
 
-import com.trius.dto.TicketDto;
+import com.trius.contract.TicketDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

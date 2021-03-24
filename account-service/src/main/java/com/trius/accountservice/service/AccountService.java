@@ -1,13 +1,12 @@
 package com.trius.accountservice.service;
 
-import com.trius.accountservice.dto.AccountDto;
 import com.trius.accountservice.entity.Account;
 import com.trius.accountservice.repo.AccountRepository;
+import com.trius.contract.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;

@@ -1,8 +1,7 @@
 package com.trius.accountservice.api;
 
-import com.trius.accountservice.dto.AccountDto;
-import com.trius.accountservice.entity.Account;
 import com.trius.accountservice.service.AccountService;
+import com.trius.contract.AccountDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
