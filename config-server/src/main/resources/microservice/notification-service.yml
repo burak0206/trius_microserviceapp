@@ -1,25 +1,18 @@
 server:
-  port: 8089
+  port: 8091
 
 spring:
   application:
-    name: ticket-service
-  datasource:
-    url: jdbc:mysql://localhost:3306/ticketdb
-    username: root
-    password: "020688"
-  jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    hibernate:
-      ddl-auto: update
+    name: notification-service
+
   rabbitmq:
     username: "triusqueue"
     password: "triusqueue"
+
   cloud:
     stream:
       bindings:
-        output:
+        input:
           destination: "triusqueue"
 
 eureka:

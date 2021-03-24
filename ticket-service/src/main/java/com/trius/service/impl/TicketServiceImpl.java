@@ -9,6 +9,7 @@ import com.trius.model.TicketStatus;
 import com.trius.model.es.TicketModel;
 import com.trius.repository.TicketRepository;
 import com.trius.repository.es.TicketElasticRepository;
+import com.trius.service.TicketNotificationService;
 import com.trius.service.TicketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -23,7 +24,7 @@ public class TicketServiceImpl implements TicketService {
 
     private final TicketElasticRepository ticketElasticRepository;
     private final TicketRepository ticketRepository;
-
+    private final TicketNotificationService ticketNotificationService;
     private final AccountServiceClient accountServiceClient;
 
     @Override
@@ -64,6 +65,8 @@ public class TicketServiceImpl implements TicketService {
         ticketElasticRepository.save(model);
         // olusan nesneyi döndür
         ticketDto.setId(ticket.getId());
+
+        ticketNotificationService.sendToQueue(ticket);
         return ticketDto;
     }
 
