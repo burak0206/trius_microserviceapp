@@ -6,26 +6,31 @@
         <artifactId>microservice-app</artifactId>
         <groupId>com.trius</groupId>
         <version>1.0.1</version>
-        <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eureka-discover-server</artifactId>
+    <artifactId>gateway-server</artifactId>
 
+    <properties>
+        <java.version>11</java.version>
+    </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-            <version>2.2.0.RELEASE</version>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
     </dependencies>
 
@@ -37,6 +42,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

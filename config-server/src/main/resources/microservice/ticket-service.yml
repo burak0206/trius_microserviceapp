@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: ticket-service
+  zipkin:
+    base-url: http://localhost:9411/
   datasource:
     url: jdbc:mysql://localhost:3306/ticketdb
     username: root
@@ -21,6 +23,10 @@ spring:
       bindings:
         output:
           destination: "triusqueue"
+  boot:
+    admin:
+      client:
+        url: http://localhost:8508
 
 eureka:
   client:
@@ -28,3 +34,9 @@ eureka:
       hostname: localhost
     serviceUrl:
       defaultZone: http://localhost:9999/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

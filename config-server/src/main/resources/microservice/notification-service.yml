@@ -4,11 +4,15 @@ server:
 spring:
   application:
     name: notification-service
-
+  zipkin:
+    base-url: http://localhost:9411/
+  boot:
+    admin:
+      client:
+        url: http://localhost:8508
   rabbitmq:
     username: "triusqueue"
     password: "triusqueue"
-
   cloud:
     stream:
       bindings:
@@ -21,3 +25,9 @@ eureka:
       hostname: localhost
     serviceUrl:
       defaultZone: http://localhost:9999/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
